@@ -1,1 +1,7 @@
-<p>toast works!</p>
+<div *ngIf="show()" class="toast show align-items-center text-white bg-{{ type }} border-0" role="alert">
+  <div class="d-flex">
+    <div class="toast-body">
+      <span [innerHTML]="message"></span>
+    </div>
+  </div>
+</div>

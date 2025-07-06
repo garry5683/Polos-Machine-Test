@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, OnInit, Output, EventEmitter, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-dynamic-form-component',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, ],
   templateUrl: './dynamic-form-component.component.html',
   styleUrl: './dynamic-form-component.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -48,4 +48,5 @@ export class DynamicFormComponentComponent {
       this.form.markAllAsTouched();
     }
   }
+
 }

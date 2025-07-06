@@ -28,3 +28,11 @@
     (formSubmit)="onFormSubmit($event)"
   ></app-dynamic-form-component>
 </div>
+
+
+<app-toast
+*ngIf="showToast"
+[message]="toastMessage"
+[type]="toastType"
+[delay]="3000">
+</app-toast>
