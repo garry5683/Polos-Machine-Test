@@ -1,0 +1,14 @@
+.custom-white-btn {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid white;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.custom-white-btn:hover {
+  background-color: white !important;
+  border: 2px solid rgb(193, 211, 226);
+}
+
+.selected-class{
+  background-color: rgb(193, 211, 226);
+}

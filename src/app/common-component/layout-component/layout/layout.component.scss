@@ -1,0 +1,79 @@
+/* Common layout */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: aliceblue;
+}
+
+.content-area {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Sidebar base style */
+.menu-container {
+  width: 240px;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  margin:1rem;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+/* On all screens: allow hide/show */
+.hide-menu {
+  display: none;
+}
+
+/* Mobile: slide overlay */
+@media (max-width: 768px) {
+  .menu-container {
+    position: fixed;
+    top: 56px; 
+    left: 0;
+    height: calc(100% - 56px);
+    z-index: 1000;
+    transform: translateX(-100%);
+    width: 80%;
+    max-width: 300px;
+    margin:0rem;
+    border-radius: 0px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    background-color: white;
+    display: block !important;
+  }
+
+  .menu-container.show-menu {
+    transform: translateX(0);
+  }
+
+  .menu-overlay {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+  }
+}
+
+.header-content{
+    background-color: rgb(255, 255, 255);
+}
+
+.main-content {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  margin:1rem;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+}
