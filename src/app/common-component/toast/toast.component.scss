@@ -5,12 +5,12 @@
     z-index: 1055;
     min-width: 400px;
   }
-  @media (max-width: 768px) {
-    .toast {
-        position: fixed;
-        bottom: 2rem;
-        right: 1.25rem;
-        z-index: 1055;
-        width: 100px;
-      }
+@media (max-width: 768px) {
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1055;
+    min-width: 200px !important;
   }
+}
