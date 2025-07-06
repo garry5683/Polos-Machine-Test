@@ -6,12 +6,12 @@ import { Component, Input, signal } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './toast.component.html',
-  styleUrl: './toast.component.scss'
+  styleUrl: './toast.component.scss',
 })
 export class ToastComponent {
   @Input() message = '';
   @Input() type: 'success' | 'danger' | 'warning' | 'info' = 'success';
-  @Input() delay = 3000;
+  delay = 2000;
 
   show = signal(false);
 
@@ -22,5 +22,4 @@ export class ToastComponent {
       this.show.set(false);
     }, this.delay);
   }
-
 }

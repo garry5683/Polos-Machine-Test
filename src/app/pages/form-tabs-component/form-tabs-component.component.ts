@@ -3,6 +3,7 @@ import { DynamicFormComponentComponent } from '../dynamic-form-component/dynamic
 import { FormStateServiceService } from '../../service/FormStateService/form-state-service.service';
 import { ToastComponent } from '../../common-component/toast/toast.component';
 import { CommonModule } from '@angular/common';
+import { DynamicFormField } from '../../model/dynamic-form-field';
 
 @Component({
   selector: 'app-form-tabs-component',
@@ -13,19 +14,18 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormTabsComponentComponent {
+  activeTab = 'A';
 
-    activeTab = 'A';
-
-  formASchema = [
+  formASchema: DynamicFormField[] = [
     { type: 'text', label: 'Full Name', name: 'fullName', required: true },
     { type: 'email', label: 'Email', name: 'email' },
-    { type: 'checkbox', label: 'Subscribe', name: 'subscribe' }
+    { type: 'checkbox', label: 'Subscribe', name: 'subscribe' },
   ];
 
-  formBSchema = [
+  formBSchema :DynamicFormField[] = [
     { type: 'text', label: 'Username', name: 'username', required: true },
     { type: 'password', label: 'Password', name: 'password', required: true },
-    { type: 'checkbox', label: 'Remember Me', name: 'remember' }
+    { type: 'checkbox', label: 'Remember Me', name: 'remember' },
   ];
 
   constructor(private formStateService: FormStateServiceService) {}
@@ -40,25 +40,30 @@ export class FormTabsComponentComponent {
 
   onFormSubmit(formValue: any) {
     this.formStateService.setFormState(this.activeTab, formValue);
-      this.triggerToast(`Form ${this.activeTab} submitted successfully!`,"success");
+    this.triggerToast(
+      `Form ${this.activeTab} submitted successfully!`,
+      'success'
+    );
   }
 
   switchTab(tab: 'A' | 'B') {
     this.activeTab = tab;
   }
 
-  
   toastMessage = '';
   toastType: 'success' | 'danger' | 'info' | 'warning' = 'success';
   showToast = false;
-  
-  triggerToast(message: string, type: 'success' | 'danger' | 'info' | 'warning') {
+
+  triggerToast(
+    message: string,
+    type: 'success' | 'danger' | 'info' | 'warning'
+  ) {
     this.toastMessage = message;
     this.toastType = type;
     this.showToast = true;
-  
+
     setTimeout(() => {
       this.showToast = false;
-    }, 3000);
+    }, 2000);
   }
 }

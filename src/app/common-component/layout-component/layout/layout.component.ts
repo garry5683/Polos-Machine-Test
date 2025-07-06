@@ -9,13 +9,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [RouterOutlet, MenuComponent, HeaderComponent, CommonModule],
   templateUrl: './layout.component.html',
-  styleUrl: './layout.component.scss'
+  styleUrl: './layout.component.scss',
 })
 export class LayoutComponent {
   isMenuVisible: boolean = true;
-    ngOnInit(): void {
+  ngOnInit(): void {
     const screenWidth = window.innerWidth;
     this.isMenuVisible = screenWidth >= 768;
   }
-
 }

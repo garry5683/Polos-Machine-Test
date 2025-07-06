@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FormStateServiceService {
-
-  constructor() { }
+  constructor() {}
   private storageKey = 'formStates';
 
   private state: { [key: string]: any } = this.loadFromLocalStorage();
@@ -27,6 +26,4 @@ export class FormStateServiceService {
     const stored = localStorage.getItem(this.storageKey);
     return stored ? JSON.parse(stored) : {};
   }
-
-
 }

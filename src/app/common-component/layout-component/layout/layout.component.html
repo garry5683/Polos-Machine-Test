@@ -1,20 +1,12 @@
 <div class="main-container">
-  <app-header
-    (toggleMenu)="isMenuVisible = !isMenuVisible"
-    class="header-content">
+  <app-header (toggleMenu)="isMenuVisible = !isMenuVisible" class="header-content">
   </app-header>
 
   <div class="content-area">
-    <div
-      class="menu-overlay d-md-none"
-      *ngIf="isMenuVisible"
-      (click)="isMenuVisible = false">
+    <div class="menu-overlay d-md-none" *ngIf="isMenuVisible" (click)="isMenuVisible = false">
     </div>
 
-    <div
-      class="menu-container"
-      [class.show-menu]="isMenuVisible"
-      [class.hide-menu]="!isMenuVisible">
+    <div class="menu-container" [class.show-menu]="isMenuVisible" [class.hide-menu]="!isMenuVisible">
       <app-menu (closeMenu)="isMenuVisible = !isMenuVisible"></app-menu>
     </div>
 

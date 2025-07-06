@@ -1,10 +1,6 @@
 @for (item of menuList; track item.id) {
-  <button
-    type="button"
-    class="btn w-100 mb-2 text-start"
-    [class.selected-class]="item.active"
-    [class.custom-white-btn]="!item.active"
-    (click)="onMenuClick(item)">
-    {{ item.label }}
-  </button>
+<button type="button" class="btn w-100 mb-2 text-start" [class.selected-class]="item.active"
+  [class.custom-white-btn]="!item.active" (click)="onMenuClick(item)">
+  {{ item.label }}
+</button>
 }

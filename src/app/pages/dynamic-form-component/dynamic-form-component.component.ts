@@ -1,38 +1,36 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { DynamicFormField } from '../../model/dynamic-form-field';
 
 @Component({
   selector: 'app-dynamic-form-component',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, ],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './dynamic-form-component.component.html',
   styleUrl: './dynamic-form-component.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DynamicFormComponentComponent {
-
-  @Input() schema: any[] = []; // for the scheme of Form A and Form B
-  @Input() initialData: any = {}; // for setting already saved data 
-  @Output() formSubmit = new EventEmitter<any>(); 
+  @Input() schema: DynamicFormField[] = [];
+  @Input() initialData: any = {};
+  @Output() formSubmit = new EventEmitter<any>();
 
   form!: FormGroup;
 
   constructor(private fb: FormBuilder) {}
 
-
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['schema'] && changes['schema'].currentValue) {
-      this.buildForm(); 
-    } else if (changes['initialData'] && this.form) {
-      this.form.patchValue(this.initialData); 
+      this.buildForm();
+    }else if (changes['initialData'] && this.form) {
+      this.form.patchValue(this.initialData);
     }
   }
 
-
   buildForm(): void {
     const group: { [key: string]: any } = {};
-    this.schema.forEach(field => {
+    this.schema.forEach((field) => {
       const validators = [];
       if (field.required) validators.push(Validators.required);
       if (field.type === 'email') validators.push(Validators.email);
@@ -48,5 +46,4 @@ export class DynamicFormComponentComponent {
       this.form.markAllAsTouched();
     }
   }
-
 }
