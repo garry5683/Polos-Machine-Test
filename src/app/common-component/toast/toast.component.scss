@@ -3,14 +3,9 @@
     bottom: 2rem;
     right: 2rem;
     z-index: 1055;
-    min-width: 400px;
   }
 @media (max-width: 768px) {
 .toast {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 1055;
-    min-width: 200px !important;
+    max-width: 250px !important;
   }
 }
