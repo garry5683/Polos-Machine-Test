@@ -1,0 +1,9 @@
+<select class="form-control" [formControl]="regionControl" (change)="onSelect($event)">
+  <option value="">Select</option>
+  <optgroup *ngFor="let country of countryList" [label]="country.name">
+    <option *ngFor="let state of country.states" [value]="country.name + ' > ' + state.name">
+      {{ state.name }}
+    </option>
+  </optgroup>
+</select>
+

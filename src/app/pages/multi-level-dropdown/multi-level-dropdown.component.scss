@@ -1,0 +1,39 @@
+.dropdown-container {
+  position: relative;
+  width: 250px;
+  font-family: sans-serif;
+}
+
+.fake-select {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  cursor: pointer;
+  background: white;
+  position: relative;
+}
+
+.fake-select .arrow {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  margin-top: 2px;
+  list-style: none;
+  padding: 0;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}

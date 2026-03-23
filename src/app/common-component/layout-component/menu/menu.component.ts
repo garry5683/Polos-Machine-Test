@@ -19,7 +19,8 @@ export class MenuComponent {
 
   menuList: MenuList[] = [
     { id: 1, label: '📝 Dynamic Form', url: '/form-tab', active: true },
-    { id: 2, label: '📄 Another Component', url: '/another-component', active: false }
+    { id: 2, label: '📄 Add Fruits', url: '/add-fruits', active: false },
+    { id: 3, label: '📄 Multi Level Select', url: '/multi-level-dropdown', active: false }
   ];
 
   selectedItem = this.menuList[0];

@@ -11,8 +11,12 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/form-tabs-component/form-tabs-component.component').then( (m) => m.FormTabsComponentComponent)
       },      
       {
-        path: 'another-component', 
+        path: 'add-fruits', 
         loadComponent: () => import('./pages/another-component/another-component.component').then( (m) => m.AnotherComponentComponent)
+      },      
+      {
+        path: 'multi-level-dropdown', 
+        loadComponent: () => import('./pages/multi-level-dropdown/multi-level-dropdown.component').then( (m) => m.MultiLevelDropdownComponent)
       }
     ]
   }
