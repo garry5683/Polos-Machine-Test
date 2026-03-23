@@ -1,5 +1,5 @@
 {
-  "name": "polus-machine-test",
+  "name": "machine-test",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
