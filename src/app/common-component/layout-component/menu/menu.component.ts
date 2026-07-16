@@ -14,13 +14,19 @@ export class MenuComponent {
   @Output() closeMenu = new EventEmitter<void>();
 
   constructor(private router: Router) {
-    this.router.navigate(['/form-tab']);
+    this.router.navigate(['/components']);
   }
 
   menuList: MenuList[] = [
-    { id: 1, label: '📝 Dynamic Form', url: '/form-tab', active: true },
+    { id: 1, label: '📝 Components', url: '/components', active: true },
+    { id: 4, label: '📝 Dynamic Form', url: '/form-tab', active: false },
     { id: 2, label: '📄 Add Fruits', url: '/add-fruits', active: false },
-    { id: 3, label: '📄 Multi Level Select', url: '/multi-level-dropdown', active: false }
+    {
+      id: 3,
+      label: '📄 Multi Level Select',
+      url: '/multi-level-dropdown',
+      active: false,
+    },
   ];
 
   selectedItem = this.menuList[0];
